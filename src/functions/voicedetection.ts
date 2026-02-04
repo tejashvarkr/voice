@@ -10,8 +10,8 @@ app.use(cors());
 app.use(express.json({ limit: "50mb" }));
 
 // Secrets from environment variables
-const VOXGUARD_SECRET_KEY = process.env.VOXGUARD_SECRET_KEY!;
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY!;
+const VOXGUARD_SECRET_KEY = 'sk_voxguard_secure_key_2025';
+const GEMINI_API_KEY = "AIzaSyCumpe0vzMkS_FoVHPri1M1UMPlmqD6RLg";
 
 /**
  * POST /.netlify/functions/voiceDetection
@@ -36,7 +36,7 @@ app.post("/", async (req: Request, res: Response) => {
   }
 
   try {
-    const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+    const ai = new GoogleGenAI({ apiKey: 'AIzaSyCumpe0vzMkS_FoVHPri1M1UMPlmqD6RLg'  });
 
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
